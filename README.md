@@ -38,8 +38,9 @@ This improvement in training speed has been brought about by the following techn
 
 As well as many systems optimizations.
 
-> **Personal note:** I forked this repo to study the training techniques listed above, particularly Muon and the architectural changes. My notes and experiments are in the `experiments/` directory (not yet pushed). If you're also learning from this codebase, the best entry point is `train_gpt2.py` — it's surprisingly readable given how much is packed in.
-
-Contributors list (growing with each new record): [@bozavlado](https://x.com/bozavlado); [@brendanh0gan](https://x.com/brendanh0gan);
-[@fernbear.bsky.social](https://bsky.app/profile/fernbear.bsky.social); [@Grad62304977](https://x.com/Grad62304977); 
-[@jxbz](https://x.com/jxbz); [@kellerjordan0](https://x.com/keller
+> **Personal note:** I forked this repo to study the training techniques listed above, particularly Muon and the architectural changes. My notes and experiments are in the `experiments/` directory (not yet pushed). If you're also learning from this codebase, the best entry point is `train_gpt2.py` — it's surprisingly readable for how much it does.
+>
+> **Techniques I'm currently studying:**
+> - **Muon optimizer**: The Newton-Schulz orthogonalization step is the key insight — see `muon.py` and the [writeup](https://kellerjordan.github.io/posts/muon/) for details.
+> - **Bigram hash embedding**: Added recently; I want to understand how much it contributes vs. the extra parameter count.
+> - **Multi token prediction**: Curious whether the auxiliary loss heads are kept at inference or discarded.
