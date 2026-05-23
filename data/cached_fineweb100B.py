@@ -12,7 +12,9 @@ def get(fname):
     else:
         print(f"Already cached: {fname}")
 get("fineweb_val_%06d.bin" % 0)
-num_chunks = 103 # reduced default: ~10B tokens instead of full 100B, sufficient for most experiments
+# Default reduced to 10 chunks (~1B tokens) for faster local experimentation.
+# Pass a command-line argument to download more, e.g.: python cached_fineweb100B.py 103
+num_chunks = 10
 if len(sys.argv) >= 2: # we can pass an argument to download less
     num_chunks = int(sys.argv[1])
 for i in range(1, num_chunks+1):
