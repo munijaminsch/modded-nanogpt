@@ -29,5 +29,8 @@ RUN python -m pip install --upgrade pip && \
 
 RUN pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu126 --upgrade
 
+# Copy project files into the image so the container is self-contained for quick experiments
+COPY . /modded-nanogpt/
+
 CMD ["bash"]
 ENTRYPOINT []
